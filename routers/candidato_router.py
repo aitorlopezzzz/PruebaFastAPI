@@ -1,6 +1,7 @@
 # En routers/candidato_router.py
 
 """Router para insertar candidatos"""
+
 from fastapi import APIRouter
 from models import Candidato
 import sqlite3
@@ -10,7 +11,7 @@ router = APIRouter()
 @router.post("/candidato")
 def crear_candidato(candidato: Candidato):
     '''
-    Endpoint POST para insertar candidatos
+    POST para insertar candidatos en la BBDD SQlite
     '''
     try:
         db = sqlite3.connect('database.db')
